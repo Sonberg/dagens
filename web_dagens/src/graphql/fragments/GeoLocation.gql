@@ -1,0 +1,8 @@
+fragment GeoLocation on GeoLocation {
+    id
+    company {
+        id
+    }
+    latitude
+    longitude
+}

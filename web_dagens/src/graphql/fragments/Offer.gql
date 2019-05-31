@@ -1,0 +1,11 @@
+fragment Offer on Offer {
+    id
+    begin
+    end
+    company {
+        id
+    }
+    name
+    price
+    tags
+}

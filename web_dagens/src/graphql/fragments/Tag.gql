@@ -1,0 +1,10 @@
+fragment Tag on Tag {
+    id
+    value
+    companies {
+        id
+    }
+    offers {
+        id
+    }
+}

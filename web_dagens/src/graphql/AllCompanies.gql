@@ -1,0 +1,7 @@
+#import "./fragments/Company.gql"
+
+query allCompanies {
+  allCompanies {
+    ...Company
+  }
+}

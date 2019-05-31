@@ -1,0 +1,9 @@
+fragment User on User {
+  id
+  name
+  companies {
+      id
+  }
+  type
+  createdAt
+}

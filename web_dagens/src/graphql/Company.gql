@@ -1,0 +1,7 @@
+#import "./fragments/Company.gql"
+
+query company($id: ID!){
+  Company(id: $id) {
+    ...Company
+  }
+}

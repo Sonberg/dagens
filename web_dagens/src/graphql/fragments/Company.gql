@@ -1,0 +1,19 @@
+fragment Company on Company {
+  id
+  name
+  image
+  text
+  visibility
+  geoLocations {
+      id
+  }
+  offers {
+      id
+  }
+  tags {
+      id
+  }
+  users {
+      id
+  }
+}
