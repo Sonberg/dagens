@@ -1,0 +1,7 @@
+#import "./fragments/Company.gql"
+
+mutation createCompany ($name: String!, $text: String!, $imageId: ID) {
+  createCompany(name: $name, text: $text, imageId: $imageId) {
+    ...Company
+  }
+}

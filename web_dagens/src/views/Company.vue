@@ -1,31 +1,42 @@
 <template>
-    <b-form v-if="Company" class="mt-5" @submit="onSubmit">
-        <h1 v-html="Company.name" />
-        <b-form-group label="Namn">
-            <input v-model="Company.name"/>
-        </b-form-group>
-        <b-form-group label="Bild">
-            <input v-model="Company.image"/>
-        </b-form-group>
-        <b-button type="submit" variant="primary">Spara</b-button>
-    </b-form>
-    <b-row v-else class="mt-5">
+  <div v-if="Company">
+    <view-header :title="Company.name">
+      <router-link :to="`/companies/${Company.id}/edit`">
+        <v-icon name="fas fa-edit" />
+      </router-link>
+    </view-header>
+    <b-container>
+      <b-row class="d-flex align-items-center">
         <b-col>
-            <h1 v-html="'Not found'"/>
+          <p v-html="Company.text" />
         </b-col>
-    </b-row>
+        <b-col sm="auto" v-if="Company.image">
+          <img :src="Company.image" :alt="Company.name" style="height: 100px; width: 100px;" />
+        </b-col>
+      </b-row>
+    </b-container>
+  </div>
 </template>
 
 <script>
+import ViewHeader from "@/components/View.Header.vue";
+import FormCompany from "@/components/Form.Company.vue";
+import FormCompanyImage from "@/components/Form.Company.Image.vue";
+import FormGeoLocation from "@/components/Form.GeoLocation.vue";
+import CompanyValidator, { data } from "@/validators/company";
+
 import company from "@/graphql/Company.gql";
+import CreateGeoLocation from "@/graphql/CreateGeoLocation.gql";
+import UpdateCompany from "@/graphql/UpdateCompany.gql";
+import UpdateGeoLocation from "@/graphql/UpdateGeoLocation.gql";
+import UPLOAD_FILE from "@/graphql/UploadFile.gql";
 
 export default {
-  name: "company",
-  methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      alert(this.Company.name);
-    }
+  components: {
+    ViewHeader,
+    FormCompany,
+    FormGeoLocation,
+    FormCompanyImage
   },
   apollo: {
     Company: {

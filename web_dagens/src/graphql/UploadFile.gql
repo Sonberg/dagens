@@ -1,7 +1,7 @@
-#import "./FileFragment.gql"
+#import "./fragments/File.gql"
 
 mutation uploadFile ($file: Upload!) {
   singleUpload (file: $file) {
-    ...file
+    ...File
   }
 }

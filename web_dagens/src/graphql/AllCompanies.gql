@@ -1,7 +1,21 @@
 #import "./fragments/Company.gql"
 
 query allCompanies {
-  allCompanies {
-    ...Company
-  }
+	allCompanies {
+		...Company
+		geoLocation {
+			id
+			latitude
+			longitude
+		}
+		offers {
+			id
+		}
+		tags {
+			id
+		}
+		users {
+			id
+		}
+	}
 }

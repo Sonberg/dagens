@@ -1,7 +1,11 @@
 #import "./fragments/Company.gql"
+#import "./fragments/GeoLocation.gql"
 
 query company($id: ID!){
   Company(id: $id) {
     ...Company
+    geoLocation {
+      ...GeoLocation
+    }
   }
 }

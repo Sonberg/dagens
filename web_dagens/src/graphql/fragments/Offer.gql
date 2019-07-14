@@ -7,5 +7,4 @@ fragment Offer on Offer {
     }
     name
     price
-    tags
 }

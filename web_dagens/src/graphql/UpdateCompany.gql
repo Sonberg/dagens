@@ -1,0 +1,7 @@
+#import "./fragments/Company.gql"
+
+mutation updateCompany($id: ID!, $name: String!, $text: String!, $imageId: ID) {
+	updateCompany(id: $id, name: $name, text: $text, imageId: $imageId) {
+		...Company
+	}
+}

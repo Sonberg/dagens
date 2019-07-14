@@ -1,0 +1,7 @@
+#import "./fragments/GeoLocation.gql"
+
+mutation updateGeoLocation($id: ID!, $latitude: Float!, $longitude: Float!, $companyId: ID!) {
+	updateGeoLocation(id: $id, latitude: $latitude, longitude: $longitude, companyId: $companyId) {
+		...GeoLocation
+	}
+}
