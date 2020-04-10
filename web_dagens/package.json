@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/vue-fontawesome": "^0.1.6",
-    "auth0-js": "^9.11.1",
+    "auth0-js": "^9.13.2",
     "bootstrap-vue": "^2.0.0-rc.20",
     "core-js": "^2.6.5",
     "graphql-type-json": "^0.2.1",
